@@ -1,0 +1,22 @@
+{% extends 'moriapp/base.html' %}
+{% block title %}イベント一覧 - MoriProject{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+
+    <h1 class="page-title">イベント一覧 🎉</h1>
+
+    <div class="event-list">
+        {% for event in events %}
+        <div class="event-card">
+            <h2 class="event-title">{{ event.title }}</h2>
+            <p class="event-date">開催日: {{ event.date }}</p>
+            <p class="event-description">{{ event.description }}</p>
+        </div>
+        {% empty %}
+            <p>まだイベントがありません</p>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'moriapp/base.html' %}
+{% block title %}お問い合わせ - MoriProject{% endblock %}
+
+{% block content %}
+<div class="contact-wrapper">
+    <h1 class="contact-title">お問い合わせ 💌</h1>
+
+    <div class="contact-box">
+        <form method="post">
+            {% csrf_token %}
+
+            <label for="id_name">お名前</label>
+            {{ form.name }}
+
+            <label for="id_email">メールアドレス</label>
+            {{ form.email }}
+
+            <label for="id_message">お問い合わせ内容</label>
+            {{ form.message }}
+
+            <button type="submit">送信する</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

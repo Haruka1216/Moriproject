@@ -1,0 +1,22 @@
+{% extends 'moriapp/base.html' %}
+{% block title %}生き物図鑑 - MoriProject{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+    <h1 class="page-title">魚・虫図鑑 🐟🦋</h1>
+
+    <div class="creature-list">
+        {% for creature in creatures %}
+        <div class="creature-card">
+            <img class="thumbnail" src="{{ creature.image.url }}" alt="{{ creature.name }}">
+            <div class="creature-name">{{ creature.name }}</div>
+            <div class="creature-info">種類：{{ creature.category }}</div>
+            <div class="creature-info">値段：{{ creature.price }}ベル</div>
+            <div class="creature-info">出現時間：{{ creature.time }}</div>
+        </div>
+        {% empty %}
+            <p class="empty-message">まだ生き物データがありません…🌱</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

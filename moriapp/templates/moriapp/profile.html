@@ -1,0 +1,15 @@
+{% extends "moriapp/base.html" %}
+{% block content %}
+<div class="container">
+<h2>マイプロフィール</h2>
+   {% if profile.icon %}
+<img src="{{ profile.icon.url }}" style="width:120px; height:120px; border-radius:50%;">
+   {% else %}
+<p>アイコン未設定</p>
+   {% endif %}
+<p><strong>ユーザー名:</strong> {{ profile.user.username }}</p>
+<p><strong>自己紹介:</strong> {{ profile.bio }}</p>
+<p><strong>好きな住民:</strong> {{ profile.favorite_villager }}</p>
+<a href="{% url 'moriapp:profile_edit' %}">編集する♡</a>
+</div>
+{% endblock %}

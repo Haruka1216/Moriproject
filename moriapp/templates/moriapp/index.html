@@ -1,0 +1,41 @@
+{% extends 'moriapp/base.html' %}
+{% load static %}
+
+{% block title %}MoriProjectへようこそ🌸{% endblock %}
+
+{% block content %}
+<div class="home page-wrapper">
+
+    <div class="home-header">
+        <h1 class="page-title">ようこそ、MoriProjectへ🌷</h1>
+        <p class="subtitle">あつ森ガイドサイトへようこそ🐿️</p>
+    </div>
+
+    <div class="menu-grid">
+        <a href="{% url 'moriapp:villager_list' %}" class="menu-card">
+            <img src="{% static 'moriapp/images/villager_icon.png' %}" alt="住民図鑑">
+            <h3>住民図鑑</h3>
+            <p>お気に入りの住民をチェック💖</p>
+        </a>
+
+        <a href="{% url 'moriapp:event_list' %}" class="menu-card">
+            <img src="{% static 'moriapp/images/event_icon.png' %}" alt="イベント">
+            <h3>イベント</h3>
+            <p>季節のイベントを楽しもう🎀</p>
+        </a>
+
+        <a href="{% url 'moriapp:creature_list' %}" class="menu-card">
+            <img src="{% static 'moriapp/images/creature_icon.png' %}" alt="魚・虫図鑑">
+            <h3>魚・虫図鑑</h3>
+            <p>集めてコンプリート🌸</p>
+        </a>
+
+        <a href="{% url 'moriapp:contact' %}" class="menu-card">
+            <img src="{% static 'moriapp/images/contact_icon.png' %}" alt="お問い合わせ">
+            <h3>お問い合わせ</h3>
+            <p>質問や要望はこちらから💌</p>
+        </a>
+    </div>
+
+</div>
+{% endblock %}

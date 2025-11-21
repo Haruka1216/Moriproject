@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MoriProject{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <ul>
+                <li><a href="{% url 'moriapp:villager_list' %}">住民図鑑</a></li>
+                <li><a href="{% url 'moriapp:event_list' %}">イベント</a></li>
+                <li><a href="{% url 'moriapp:creature_list' %}">魚・虫図鑑</a></li>
+                <li><a href="{% url 'moriapp:contact' %}">お問い合わせ</a></li>
+                <li><a href="{% url 'moriapp:profile_view' %}">マイプロフィール</a></li>
+
+                {% if user.is_authenticated %}
+                   <li>
+                       <form action="{% url 'logout' %}"method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-btn" style="background: none;border:none;color:#333;cursor:pointer;">
+                         ログアウト
+                        </button>
+                       </form>
+                {% else %}
+                    <li><a href="{% url 'login' %}">ログイン</a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,194 @@
+/* 全体 */
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background: #fff0f5; /* ふんわりピンク背景 */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ヘッダー */
+.header nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    justify-content: center;
+    background: linear-gradient(90deg, #ffd6e8, #ffc0cb); /* グラデーション */
+    border-bottom: 2px solid #ffb6c1;
+    border-radius: 0 0 20px 20px;
+}
+.header nav ul li a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d35b8d;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.header nav ul li a:hover {
+    color: #ff69b4;
+    text-decoration: underline;
+}
+
+/* ホームカード */
+.home, .menu-grid {
+    text-align: center;
+    padding: 30px 10px;
+}
+.menu-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+.menu-card {
+    display: block;
+    width: 220px;
+    background: linear-gradient(145deg, #ffe6f0, #ffd1e8);
+    border-radius: 25px;
+    box-shadow: 0 8px 15px rgba(255, 105, 180, 0.3);
+    text-decoration: none;
+    color: #333;
+    padding: 25px 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #ffb6c1;
+}
+.menu-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(255, 105, 180, 0.4);
+}
+.menu-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+.menu-card h3 { 
+    color: #e56b8c; 
+    font-size: 1.3em; 
+    margin-bottom: 5px; 
+    text-shadow: 1px 1px 2px #ffd1e8;
+}
+.menu-card p { 
+    font-size: 0.95em; 
+    color: #666; 
+}
+
+/* 共通カード */
+.villager-list, .creature-list, .event-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.villager-card, .creature-card, .event-card {
+    background: #fff0f5;
+    border-radius: 20px;
+    box-shadow: 0 5px 12px rgba(255, 182, 193, 0.3);
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+}
+.villager-card img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.villager-name, .creature-name { 
+    font-weight:bold; 
+    color:#e56b8c; 
+    margin-bottom:5px; 
+}
+.villager-img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+}
+.villager-info, .creature-info, .event-date { 
+    font-size:0.9em; 
+    color:#666; 
+    margin-bottom:3px; 
+}
+.event-title { 
+    font-weight:bold; 
+    color:#3e8e41; 
+    margin-bottom:5px; 
+}
+
+/* お問い合わせフォーム */
+.contact-box {
+    max-width: 600px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, #ffe6f0, #ffd1e8);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+}
+.contact-box label { 
+    display:block; 
+    margin-top:15px; 
+    font-weight:bold; 
+    color:#d35b8d; 
+}
+.contact-box input, .contact-box textarea {
+    width:100%; 
+    margin-top:5px; 
+    padding:12px; 
+    border-radius:12px; 
+    border:1px solid #ffc0cb; 
+    font-size:14px;
+}
+.contact-box button {
+    width:100%; 
+    margin-top:20px; 
+    padding:14px; 
+    border:none; 
+    border-radius:15px;
+    background: linear-gradient(135deg, #ff9aa2, #ff6f81); 
+    color:white; 
+    font-size:16px; 
+    font-weight:bold; 
+    cursor:pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.contact-box button:hover { 
+    background: linear-gradient(135deg, #ff6f81, #ff4f61);
+    transform: scale(1.05);
+}
+.site-header {
+    width: 100%;
+    padding: 14px 20px;
+    background: #a7d8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.nav-bar .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

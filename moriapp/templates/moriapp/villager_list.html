@@ -1,0 +1,25 @@
+{% extends 'moriapp/base.html' %}
+{% block title %}住民図鑑 - MoriProject{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+
+    <h1 class="page-title">住民図鑑 🐻‍❄️</h1>
+
+    <div class="villager-list">
+        {% for villager in villagers %}
+        <div class="villager-card">
+            <img class="villager-img" src="{{ villager.image.url }}" alt="{{ villager.name }}">
+            <div class="villager-name">{{ villager.name }}</div>
+            <div class="villager-info">種族: {{ villager.species }}</div>
+            <div class="villager-info">性格: {{ villager.personality }}</div>
+            <div class="villager-info">誕生日: {{ villager.birthday }}</div>
+            <div class="villager-info">口ぐせ: "{{ villager.catchphrase }}"</div>
+        </div>
+        {% empty %}
+        <p>まだ住民データがありません</p>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
