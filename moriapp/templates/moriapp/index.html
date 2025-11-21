@@ -1,6 +1,6 @@
 {% extends 'moriapp/base.html' %}
 {% load static %}
-
+<!--メインタイトル-->
 {% block title %}MoriProjectへようこそ🌸{% endblock %}
 
 {% block content %}
@@ -36,6 +36,13 @@
             <p>質問や要望はこちらから💌</p>
         </a>
     </div>
+
+    <div style="text-align:center; margin: 20px;">
+        <a href="{% url 'moriapp:villager_add' %}" class="post-btn">住民を追加する</a>
+        <a href="{% url 'moriapp:event_add' %}" class="post-btn">イベントを追加する</a>
+        <a href="{% url 'moriapp:creature_add' %}" class="post-btn">魚・虫を追加する</a>
+    </div>
+    
 
 </div>
 {% endblock %}

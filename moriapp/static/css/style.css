@@ -76,7 +76,7 @@ body {
     color: #666; 
 }
 
-/* 共通カード */
+/*住民図鑑*/
 .villager-list, .creature-list, .event-list {
     display: flex;
     flex-wrap: wrap;
@@ -121,6 +121,14 @@ body {
     font-weight:bold; 
     color:#3e8e41; 
     margin-bottom:5px; 
+}
+
+.creature-card img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
 }
 
 /* お問い合わせフォーム */
@@ -192,3 +200,4 @@ body {
 .nav-bar .nav-links a:hover {
     background: rgba(255, 255, 255, 0.5);
 }
+

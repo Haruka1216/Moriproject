@@ -6,6 +6,11 @@ from .forms import ContactForm
 from .forms import ProfileForm
 from .models import UserProfile
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Villager, Event, Creature
+from .forms import VillagerForm, EventForm, CreatureForm
 
 def index(request):
     return render(request, 'moriapp/index.html')
@@ -62,3 +67,23 @@ def profile_edit(request):
    else:
        form = ProfileForm(instance=profile)
    return render(request, 'moriapp/profile_edit.html', {'form': form})
+
+
+#投稿ページ
+class VillagerCreateView(LoginRequiredMixin, CreateView):
+    model = Villager
+    form_class = VillagerForm
+    template_name = 'moriapp/create_form.html'
+    success_url = reverse_lazy('moriapp:index')
+
+class EventCreateView(LoginRequiredMixin, CreateView):
+    model = Event
+    form_class = EventForm
+    template_name = 'moriapp/create_form.html'
+    success_url = reverse_lazy('moriapp:index')
+
+class CreatureCreateView(LoginRequiredMixin, CreateView):
+    model = Creature
+    form_class = CreatureForm
+    template_name = 'moriapp/create_form.html'
+    success_url = reverse_lazy('moriapp:index')
